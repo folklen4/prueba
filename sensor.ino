@@ -93,13 +93,13 @@ void lectura() {
       float temp = sqlite3_column_double(stmt, 2);
       float hum = sqlite3_column_double(stmt, 3);
       int time = sqlite3_column_int(stmt, 4);
-      // StaticJsonDocument<200> doc;
-      // doc["sensor"] = "gps";
+      StaticJsonDocument<200> doc;
+      doc["sensor"] = "gps";
 
-      // doc["time"] = 1351824120;
-      // serializeJson(doc, Serial);
-      // Serial.println("");
-      // delay(1000);
+      doc["time"] = 1351824120;
+      serializeJson(doc, Serial);
+      Serial.println("");
+      delay(1000);
       Serial.print(id);
       Serial.print(" | ");
       Serial.print(sensor);
